@@ -1,7 +1,6 @@
 package edu.hw2;
 
 public class Task4 {
-    public record CallingInfo(String className, String methodName) {}
 
     public static CallingInfo callingInfo() throws Exception {
         try {
@@ -16,4 +15,6 @@ public class Task4 {
 
         throw new Exception("Stack is empty(?)");
     }
+
+    public record CallingInfo(String className, String methodName) {}
 }

@@ -1,4 +1,5 @@
 package edu.hw2;
+
 import java.util.Random;
 
 public class Task3 {
@@ -17,6 +18,7 @@ public class Task3 {
 
     public class FaultyConnection implements Connection {
         private final Random random = new Random();
+
         private boolean isSuccess() {
             return  random.nextBoolean();
         }
@@ -38,6 +40,7 @@ public class Task3 {
 
     public class DefaultConnectionManager implements ConnectionManager {
         private final Random random = new Random();
+
         private boolean isStableConnection() {
             return random.nextBoolean();
         }
@@ -62,9 +65,7 @@ public class Task3 {
 
     public class ConnectionException extends RuntimeException {
 
-        ConnectionException() {
-            super();
-        }
+        ConnectionException() { }
 
         ConnectionException(Throwable cause) {
             super(cause);
