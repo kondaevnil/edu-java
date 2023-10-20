@@ -2,6 +2,10 @@ package edu.hw2;
 
 public class Task4 {
 
+    private Task4() {
+        throw new IllegalStateException("Utility class");
+    }
+
     public static CallingInfo callingInfo() throws Exception {
         try {
             throw new Exception();
