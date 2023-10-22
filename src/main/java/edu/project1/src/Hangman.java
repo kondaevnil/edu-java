@@ -18,7 +18,7 @@ public class Hangman {
     private Hangman() {
         reader = new BufferedReader(
             new InputStreamReader(System.in));
-        dictionary = new DefaultDictionary(LOGGER);
+        dictionary = new DefaultDictionary().setLogger(LOGGER);
     }
 
     public static Hangman getInstance() {
@@ -39,7 +39,7 @@ public class Hangman {
                 printState(result);
 
                 isRun = result.isGameRunning();
-            } catch (IOException e) {
+            } catch (IOException ignored) {
 
             }
         }
@@ -50,7 +50,7 @@ public class Hangman {
             return game.giveUp();
         }
 
-        if (input.length() != 1 || !Character.isLetter(input.charAt(0))) {
+        if (input.length() != 1) {
             return game.invalidInput();
         }
 

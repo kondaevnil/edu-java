@@ -38,8 +38,8 @@ public class Game {
         return maxAttempts <= userAttemptsCount;
     }
 
-    IResult guess(char guess) {
-        if (userAnswer.contains(guess)) {
+    public IResult guess(char guess) {
+        if (userAnswer.contains(guess) || !Character.isLetter(guess)) {
             return invalidInput();
         }
 
