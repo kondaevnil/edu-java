@@ -86,15 +86,14 @@ public class Task3 {
         }
 
         void tryExecute(String command) {
-            var connection = manager.getConnection();
-            ConnectionException connectionException = null;
+            Exception connectionException = null;
 
-            for (int i = 0; i < maxAttempts; i++) {
-                try {
+            for (var i = 0; i < maxAttempts; i++) {
+                try (var connection = manager.getConnection()) {
                     connection.execute(command);
                     return;
-                } catch (ConnectionException exception) {
-                    connectionException = exception;
+                } catch (Exception e) {
+                    connectionException = e;
                 }
             }
 
