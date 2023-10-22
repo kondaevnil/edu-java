@@ -2,9 +2,13 @@ package edu.project1.src;
 
 public interface IResult {
     String message();
+
     int maxAttempts();
+
     int userAttempts();
+
     Character[] guessWordState();
+
     boolean isGameRunning();
 
     record WinResult(int userAttempts, int maxAttempts, Character[] userAnswer) implements IResult {

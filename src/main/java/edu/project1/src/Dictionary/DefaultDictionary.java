@@ -1,12 +1,12 @@
 package edu.project1.src.Dictionary;
 
-import org.apache.logging.log4j.Logger;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Vector;
+import org.apache.logging.log4j.Logger;
 
 public class DefaultDictionary implements IDictionary {
     private final Vector<String> words;
@@ -16,7 +16,8 @@ public class DefaultDictionary implements IDictionary {
         words = new Vector<>();
         words.add("hello");
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("./src/main/java/edu/project1/assets/english.csv"))) {
+        try (BufferedReader reader =
+                 new BufferedReader(new FileReader("./src/main/java/edu/project1/assets/english.csv"))) {
             String line;
 
             line = reader.readLine();

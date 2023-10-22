@@ -2,11 +2,12 @@ package edu.project1.src;
 
 import edu.project1.src.Dictionary.DefaultDictionary;
 import edu.project1.src.Dictionary.IDictionary;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 public class Hangman {
     private final static Logger LOGGER = LogManager.getLogger();
@@ -18,10 +19,6 @@ public class Hangman {
         reader = new BufferedReader(
             new InputStreamReader(System.in));
         dictionary = new DefaultDictionary(LOGGER);
-    }
-
-    private static final class HangmanHolder {
-        private static final Hangman INSTANCE = new Hangman();
     }
 
     public static Hangman getInstance() {
@@ -81,4 +78,9 @@ public class Hangman {
     private void printRoundMessage() {
         System.out.println("Guess a letter:");
     }
+
+    private static final class HangmanHolder {
+        private static final Hangman INSTANCE = new Hangman();
+    }
+
 }
